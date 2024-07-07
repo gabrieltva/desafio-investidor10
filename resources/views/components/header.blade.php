@@ -4,13 +4,13 @@
         
         <ul class="unstyled items-center gap-4 lg:gap-6 hidden md:flex">
             <li>
-                <a href="{{ url('/register-news') }}" class="text-white hover:text-zinc-200 transition">Cadastrar notícia</a>
+                <a href="{{ url('/news/create') }}" class="text-white hover:text-zinc-200 transition">Cadastrar notícia</a>
             </li>
             <li>
                 <a href="{{ url('/') }}" class="text-white hover:text-zinc-200 transition">Exibir notícias</a>
             </li>
             <li>
-                <form id="search" class="relative" action="{{ url('/search-news') }}" method="GET">
+                <form id="search" class="relative" action="{{ route('news.search') }}" method="GET">
                     <input name="s" type="text" class="rounded-full ps-4 pe-8 py-1 outline-none focus:bg-zinc-200 transition">
                 </form>
             </li>
