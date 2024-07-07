@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+form#search::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 9px;
+  top: 6px;
+  background: url(/resources/assets/icons/search.svg) no-repeat center;
+  background-size: contain;
+}
