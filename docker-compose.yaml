@@ -1,10 +1,11 @@
-version: "3.7"
-
 services:
   # image project
   app:
     build:
-      context: .
+      args:
+        user: gabrielstafoca
+        uid: 1000
+      context: ./
       dockerfile: Dockerfile
     restart: unless-stopped
     working_dir: /var/www/
@@ -33,10 +34,10 @@ services:
     image: mariadb:10.5.8
     restart: unless-stopped
     environment:
-      MARIADB_DATABASE: ${DB_DATABASE:-laravel}
-      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD:-root}
-      MARIADB_PASSWORD: ${DB_PASSWORD:-userpass}
-      MARIADB_USER: ${DB_USERNAME:-username}
+      MYSQL_DATABASE: ${DB_DATABASE:-laravel}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-userpass}
+      MYSQL_USER: ${DB_USERNAME:-username}
     volumes:
       - ./.docker/mysql/dbdata:/var/lib/mysql
     ports:
