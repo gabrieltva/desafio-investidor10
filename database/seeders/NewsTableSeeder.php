@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\News;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -15,34 +16,6 @@ class NewsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('news')->insert([
-            [
-                'title' => 'New Tech Innovations in 2024',
-                'slug' => 'new-tech-innovations-in-2024',
-                'content' => 'Content about technology innovations in 2024...',
-                'date' => Carbon::parse('2024-07-01'),
-                'id_category' => 1,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Health Tips for the Summer',
-                'slug' => 'health-tips-for-the-summer',
-                'content' => 'Content about health tips...',
-                'date' => Carbon::parse('2024-07-02'),
-                'id_category' => 2,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Business Trends to Watch',
-                'slug' => 'business-trends-to-watch',
-                'content' => 'Content about business trends...',
-                'date' => Carbon::parse('2024-07-03'),
-                'id_category' => 3,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ]);
+        News::factory(6)->create();
     }
 }

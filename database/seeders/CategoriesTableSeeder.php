@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use Database\Factories\CategoryFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,12 +16,6 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-            ['title' => 'Technology'],
-            ['title' => 'Health'],
-            ['title' => 'Business'],
-            ['title' => 'Entertainment'],
-            ['title' => 'Sports'],
-        ]);
+        Category::factory(1)->create();
     }
 }

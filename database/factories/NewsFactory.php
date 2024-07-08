@@ -27,10 +27,10 @@ class NewsFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->sentence();
+        $title = $this->faker->sentence(4);
         return [
             'title' => $title,
-            'content' => $this->faker->paragraph(),
+            'content' => implode("\n\n", $this->faker->paragraphs(5)),
             'date' => $this->faker->date('Y-m-d'),
             'id_category' => Category::factory(),
         ];
