@@ -3,14 +3,14 @@ services:
   app:
     build:
       args:
-        user: gabrielstafoca
+        user: fulano
         uid: 1000
       context: ./
       dockerfile: Dockerfile
     restart: unless-stopped
-    working_dir: /var/www/
+    working_dir: /home/fulano/
     volumes:
-      - ./:/var/www
+      - ./:/home/fulano
     depends_on:
       - redis
       - db
@@ -24,7 +24,7 @@ services:
     ports:
       - "8989:80"
     volumes:
-      - ./:/var/www
+      - ./:/home/fulano
       - ./docker/nginx/:/etc/nginx/conf.d/
     networks:
       - laravel
