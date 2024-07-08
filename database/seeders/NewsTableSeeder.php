@@ -18,6 +18,7 @@ class NewsTableSeeder extends Seeder
         DB::table('news')->insert([
             [
                 'title' => 'New Tech Innovations in 2024',
+                'slug' => 'new-tech-innovations-in-2024',
                 'content' => 'Content about technology innovations in 2024...',
                 'date' => Carbon::parse('2024-07-01'),
                 'id_category' => 1,
@@ -26,6 +27,7 @@ class NewsTableSeeder extends Seeder
             ],
             [
                 'title' => 'Health Tips for the Summer',
+                'slug' => 'health-tips-for-the-summer',
                 'content' => 'Content about health tips...',
                 'date' => Carbon::parse('2024-07-02'),
                 'id_category' => 2,
@@ -34,6 +36,7 @@ class NewsTableSeeder extends Seeder
             ],
             [
                 'title' => 'Business Trends to Watch',
+                'slug' => 'business-trends-to-watch',
                 'content' => 'Content about business trends...',
                 'date' => Carbon::parse('2024-07-03'),
                 'id_category' => 3,

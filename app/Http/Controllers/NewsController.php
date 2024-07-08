@@ -15,7 +15,7 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index () {
-        $news = News::all();
+        $news = News::orderBy('date', 'desc')->get();
         return view('index', compact('news'));
     }
 
@@ -47,7 +47,7 @@ class NewsController extends Controller
 
         News::create($request->all());
 
-        return redirect()->route('news.create')->with('success', 'News created successfully.');
+        return redirect()->route('news.create')->with('success', 'Notícia cadastrada com sucesso.');
     }
 
     /**
@@ -63,7 +63,7 @@ class NewsController extends Controller
         $news = News::where('title', 'like', "%{$search}%")
                     ->orWhereHas('category', function($query) use ($search) {
                         $query->where('title', 'like', "%{$search}%");
-                    })
+                    })->orderBy('date', 'desc')
                     ->get();
 
         return view('news.search', compact('news', 'search'));
@@ -78,6 +78,6 @@ class NewsController extends Controller
     public function show($slug) {
         $news = News::where('slug', $slug)->firstOrFail();
 
-        return view('news.show', compact($news));
+        return view('news.show', ['news' => $news]);
     }
 }

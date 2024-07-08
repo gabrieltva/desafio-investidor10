@@ -18,4 +18,4 @@ Route::get('/', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
 Route::post('/news', [NewsController::class, 'store'])->name('news.store');
 Route::get('/news/search', [NewsController::class, 'search'])->name('news.search');
-Route::get('/news/show/:slug', [NewsController::class, 'show'])->name('news.show');
+Route::get('/news/show/{slug}', [NewsController::class, 'show'])->name('news.show');
