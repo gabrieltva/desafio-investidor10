@@ -43,7 +43,7 @@
             </div>
 
             <div class="mb-4">
-                <label class="block text-white text-sm font-bold mb-2" for="id_category">Categoria</label>
+                <label class="block text-white text-sm font-bold mb-2" for="id_category">Categoria <a href="{{ route('category.create') }}" class="ms-3 px-2 bg-lime-400 hover:bg-lime-700 text-black py-1 text-xs rounded-full focus:outline-none focus:shadow-outline">Cadastrar nova</a></label>
                 <select name="id_category" id="id_category" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     <option value="">Selecione uma categoria</option>
                     @foreach ($categories as $category)
