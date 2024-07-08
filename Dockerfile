@@ -35,7 +35,7 @@ RUN pecl install -o -f redis \
     &&  docker-php-ext-enable redis
 
 # Set working directory
-WORKDIR /home/$user
+WORKDIR /var/www
 
 # Copy custom configurations PHP
 COPY docker/php/custom.ini /usr/local/etc/php/conf.d/custom.ini
