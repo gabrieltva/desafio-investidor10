@@ -1,4 +1,8 @@
-<x-layout title="Registrar nova notícia">
+<x-layout>
+    <x-slot:title>
+        Registrar nova notícia
+    </x-slot:title>
+
     <div class="flex flex-col gap-3">
         <h1 class="text-4xl text-white">Registrar nova notícia</h1>
         <hr class="border-zinc-500">

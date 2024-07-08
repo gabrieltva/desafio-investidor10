@@ -1,4 +1,7 @@
 <x-layout>
+    <x-slot:title>
+        Busca por: "{{ $search }}"
+    </x-slot:title>
     <div class="flex flex-col gap-8">
         <h1 class="text-2xl text-white">Busca por: "{{ $search }}"</h1>
         <hr class="border-zinc-500">

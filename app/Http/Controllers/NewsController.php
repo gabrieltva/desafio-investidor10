@@ -77,7 +77,8 @@ class NewsController extends Controller
      */
     public function show($slug) {
         $news = News::where('slug', $slug)->firstOrFail();
+        $category = $news->category()->firstOrFail();
 
-        return view('news.show', ['news' => $news]);
+        return view('news.show', ['news' => $news, 'category' => $category]);
     }
 }
