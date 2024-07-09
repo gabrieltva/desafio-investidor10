@@ -29,7 +29,7 @@ Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambie
 Para construir os contêineres Docker e iniciar o ambiente de desenvolvimento:
 
 ```bash
-docker-compose up --build
+docker-compose up --build -d
 ```
 
 Este comando irá construir e iniciar os contêineres especificados no `docker-compose.yml`.
@@ -49,6 +49,15 @@ Execute o comando para baixar os pacotes e buildar o front-end:
 ```bash
 docker-compose run --rm app npm install
 docker-compose run --rm app npm run build
+```
+
+### 6. Ajustar Permissões
+
+Para ajustar as permissões dos diretórios necessários, execute os seguintes comandos:
+
+```bash
+docker-compose run --rm app chown -R www-data:www-data /var/www/storage
+docker-compose run --rm app chown -R www-data:www-data /var/www/bootstrap/cache
 ```
 
 ### 6. Executar Testes
