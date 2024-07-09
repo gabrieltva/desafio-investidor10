@@ -16,7 +16,6 @@ services:
       - db
     networks:
       - laravel
-    command: sh -c "chown $UID:$UID /var/www"
 
   # nginx
   nginx:
