@@ -40,4 +40,4 @@ WORKDIR /var/www
 # Copy custom configurations PHP
 COPY docker/php/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
-USER $user
+ENV COMPOSER_ALLOW_SUPERUSER=1
