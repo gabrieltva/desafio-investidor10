@@ -41,3 +41,7 @@ WORKDIR /var/www
 COPY docker/php/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
+
+RUN apt update
+RUN apt install nodejs -y
+RUN apt install npm -y

@@ -44,9 +44,10 @@ docker-compose run --rm app composer install
 
 ### 5. Buildar o Vite
 
-Execute o comando para buildar o front-end:
+Execute o comando para baixar os pacotes e buildar o front-end:
 
 ```bash
+docker-compose run --rm app npm install
 docker-compose run --rm app npm run build
 ```
 
