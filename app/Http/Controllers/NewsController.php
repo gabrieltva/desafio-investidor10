@@ -75,8 +75,7 @@ class NewsController extends Controller
      * @param  String $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($slug) {
-        $news = News::where('slug', $slug)->firstOrFail();
+    public function show(News $news) {
         $category = $news->category()->firstOrFail();
 
         return view('news.show', ['news' => $news, 'category' => $category]);

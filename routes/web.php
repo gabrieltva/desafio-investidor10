@@ -15,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [NewsController::class, 'index'])->name('news.index');
-Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
-Route::post('/news', [NewsController::class, 'store'])->name('news.store');
-Route::get('/news/search', [NewsController::class, 'search'])->name('news.search');
-Route::get('/news/show/{slug}', [NewsController::class, 'show'])->name('news.show');
+Route::controller(NewsController::class)->name('news.')->group(function () {
+  Route::get('/', 'index')->name('index');
 
-Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
-Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
+  Route::prefix('/news')->group(function () {
+    Route::get('/search', 'search')->name('search');
+    Route::get('/show/{news:slug}', 'show')->name('show');
+  });
+});
+Route::resource('news', NewsController::class)->only(['create', 'store']);
+
+Route::resource('category', CategoryController::class)->only(['create', 'store']);
